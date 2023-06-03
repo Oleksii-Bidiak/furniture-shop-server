@@ -1,8 +1,10 @@
 import { Column, DataType, Model, Table } from 'sequelize-typescript'
 import { CreateUserAttrs } from '../interfaces/user.interface'
+import { ApiProperty } from '@nestjs/swagger'
 
 @Table({ tableName: 'users' })
 export class User extends Model<User, CreateUserAttrs> {
+    @ApiProperty({ example: '1', description: 'Unique key' })
     @Column({
         type: DataType.INTEGER,
         unique: true,
@@ -11,18 +13,26 @@ export class User extends Model<User, CreateUserAttrs> {
     })
     id: number
 
+    @ApiProperty({ example: 'user@gmail.com', description: "User's email" })
     @Column({ type: DataType.STRING, unique: true, allowNull: false })
     email: string
 
+    @ApiProperty({ example: '123456789', description: "User's password" })
     @Column({ type: DataType.STRING, allowNull: false })
     password: string
 
+    @ApiProperty({ example: 'Oleksii Bidiak', description: "User's name" })
     @Column({
         type: DataType.STRING,
         /* allowNull: false, */ defaultValue: 'User',
     })
     name: string
 
+    @ApiProperty({ example: '380123456789', description: "User's phone" })
     @Column({ type: DataType.INTEGER, unique: true /* allowNull: false */ })
     phone: string
+
+    @ApiProperty({ example: '', description: "User's avatar path" })
+    @Column({ type: DataType.INTEGER })
+    avatarPath: string
 }
