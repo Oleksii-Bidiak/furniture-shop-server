@@ -43,7 +43,7 @@ module.exports = {
         'import/no-duplicates': 'off',
         'no-prototype-builtins': 'error',
         'no-restricted-syntax': 'off', // need sort it out
-        'implicit-arrow-linebreak': ['error', 'below'],
+      //   'implicit-arrow-linebreak': ['error', 'below'],
         camelcase: 'off',
         'max-classes-per-file': ['error', { max: 2 }],
         'no-shadow': 'off', // a lot of errors
