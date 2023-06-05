@@ -18,7 +18,14 @@ export class RolesController {
     @ApiOperation({ summary: "Get user's role by value" })
     @ApiResponse({ status: 200, type: Role })
     @Get('/:value')
-    getByValye(@Param('value') value: string) {
+    getByValue(@Param('value') value: string) {
         return this.rolesService.getRoleByValue(value)
+    }
+
+    @ApiOperation({ summary: 'Get all roles' })
+    @ApiResponse({ status: 200, type: [Role] })
+    @Get()
+    getAllRoles() {
+        return this.rolesService.getAllRoles()
     }
 }
