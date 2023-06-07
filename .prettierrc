@@ -4,5 +4,6 @@
   "tabWidth": 4,
   "semi": false,
   "bracketSpacing": true,
-  "bracketSameLine": true
+  "bracketSameLine": true,
+  "arrowParens": "avoid"
 }
